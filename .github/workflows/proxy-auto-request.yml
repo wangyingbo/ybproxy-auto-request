@@ -44,6 +44,7 @@ jobs:
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           DATE=`date +%Y%m%d%H%M%S`
+          echo $DATE
           echo $DATE >> ~/recordtime.txt
           git add recordtime.txt
           git commit --allow-empty -m " update auto request ybproxy"
