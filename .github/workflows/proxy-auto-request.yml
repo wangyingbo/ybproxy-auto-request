@@ -38,3 +38,12 @@ jobs:
           echo ------------success excute curl ybproxypool!!!!!!!------------
           curl https://ybproxy.herokuapp.com/
           echo ------------success excute curl ybproxy!!!!!!!------------
+          
+          git config --local user.email "wangyingbo528@126.com"
+          git config --local user.name "wangyingbo"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+          DATE=`date +%Y%m%d%H%M%S`
+          echo $DATE >> ~/recordtime.txt
+          git commit --allow-empty -m " update auto request ybproxy"
+          git push
