@@ -34,9 +34,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          curl https://ybproxypool.herokuapp.com
+          # curl https://ybproxypool.herokuapp.com
           echo ------------success excute curl ybproxypool!!!!!!!------------
-          curl https://ybproxy.herokuapp.com/
+          # curl https://ybproxy.herokuapp.com/
           echo ------------success excute curl ybproxy!!!!!!!------------
           
           git config --local user.email "wangyingbo528@126.com"
@@ -45,5 +45,6 @@ jobs:
           git pull --rebase
           DATE=`date +%Y%m%d%H%M%S`
           echo $DATE >> ~/recordtime.txt
+          git add recordtime.txt
           git commit --allow-empty -m " update auto request ybproxy"
           git push
