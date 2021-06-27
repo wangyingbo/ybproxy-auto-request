@@ -62,5 +62,7 @@ jobs:
           git add recordtime.txt
           git commit --allow-empty -m " update auto request ybproxy"
           git push
-          echo "success excute shell😊😊😊😊😊😊"
+          
+          sleep 1
           echo -e "\033[33;40m  ($0) ${TIME}: this shell script execution duration: ${SECONDS}s  \033[0m"
+          echo "😊😊😊😊😊😊success excute shell😊😊😊😊😊😊"
