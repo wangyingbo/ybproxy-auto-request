@@ -34,10 +34,23 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          echo "\n"
           # curl https://ybproxypool.herokuapp.com
           #echo ------------success excute curl ybproxypool!!!!!!!------------
           # curl https://ybproxy.herokuapp.com/
           #echo ------------success excute curl ybproxy!!!!!!!------------
+          
+          if [ "$(curl -sL -w '%{http_code}' https://ybproxypool.herokuapp.com/ -o /dev/null)" = "200" ]; then
+            echo ------------success excute curl ybproxypool!!!!!!!------------
+          else
+            echo "ybproxypool Fail!!!"
+          fi
+          
+          if curl -sL --fail https://ybproxy.herokuapp.com/ -o /dev/null; then
+            ------------success excute curl ybproxy!!!!!!!------------
+          else
+            echo "ybproxy Fail!!!"
+          fi
           
           git config --local user.email "wangyingbo528@126.com"
           git config --local user.name "wangyingbo"
