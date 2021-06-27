@@ -47,7 +47,7 @@ jobs:
           fi
           
           if curl -sL --fail https://ybproxy.herokuapp.com/ -o /dev/null; then
-            ------------success excute curl ybproxy!!!!!!!------------
+            echo ------------success excute curl ybproxy!!!!!!!------------
           else
             echo "ybproxy Fail!!!"
           fi
