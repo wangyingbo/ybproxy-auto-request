@@ -57,11 +57,11 @@ jobs:
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           DATE=`date +%Y%m%d%H%M%S`
-          echo "current time: $DATE"
           echo $DATE >> ./recordtime.txt
           git add recordtime.txt
           git commit --allow-empty -m " update auto request ybproxy"
           git push
+          echo "current push time: $DATE"
           
           sleep 1
           echo -e "\033[33;40m  ($0) ${TIME}: this shell script execution duration: ${SECONDS}s  \033[0m"
