@@ -58,7 +58,9 @@ jobs:
           git pull --rebase
           DATE=`date +%Y%m%d%H%M%S`
           echo "current git push time: $DATE"
+          # 插入到最后一行
           # echo $DATE >> ./recordtime.txt
+          # 插入到第一行
           sed -i "1i$DATE" ./recordtime.txt
           git add recordtime.txt
           git commit --allow-empty -m " update auto request ybproxy"
