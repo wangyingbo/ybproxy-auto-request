@@ -53,6 +53,12 @@ jobs:
             echo "ybproxy Fail!!!"
           fi
           
+          if curl -sL --fail https://whoogle-search.yingbowang.repl.co/ -o /dev/null; then
+            echo ------------success excute curl whoogle-search.yingbowang!!!!!!!------------
+          else
+            echo "whoogle-search.yingbowang Fail!!!"
+          fi
+          
           git config --local user.email "wangyingbo528@126.com"
           git config --local user.name "wangyingbo"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
