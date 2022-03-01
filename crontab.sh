@@ -1,7 +1,9 @@
 #!/bin/bash
 # author wangyingbo
 
-cd /root/Desktop/Projects/ybproxy-auto-request
+echo "--------current path:-------"
+echo $PWD
+
 git pull --rebase
 DATE=`date +%Y%m%d%H%M%S`
 echo "current git push time: $DATE"
